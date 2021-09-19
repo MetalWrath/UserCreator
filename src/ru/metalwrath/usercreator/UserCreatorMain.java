@@ -6,8 +6,8 @@ public class UserCreatorMain {
     public static void main(String[] args) {
         Date date1 = new Date();
         int needLength = 30000;   // Размер для полей юзер и пассворд.
-        StringBuilder tempUser = new StringBuilder();  //Создали объекты Стринг бюлдера, они не плодят объекты.
-        StringBuilder tempPswrd = new StringBuilder(); //Они изменяют созданный объект.
+        String tempUser = "";  //Создали объекты Стринг бюлдера, они не плодят объекты.
+        String tempPswrd = ""; //Они изменяют созданный объект.
 
         //Создаем алфавит содержащий все нужные нам символы. При необходимости добавь еще какие-нибудь.
         String[] alphabet = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H",
@@ -17,12 +17,12 @@ public class UserCreatorMain {
         //Цикл заполнения для юзера
         for (int i = 0; i < needLength; i++){
             int random = (int)(Math.random() * (alphabet.length - 1) + 1);
-            tempUser.append(alphabet[random]);
+            tempUser = tempUser + (alphabet[random]);
         }
         //Цикл заполнения для пассворда
         for (int i = 0; i < needLength; i++){
             int random = (int)(Math.random() * (alphabet.length - 1) + 1);
-            tempPswrd.append(alphabet[random]);
+            tempPswrd = tempPswrd + (alphabet[random]);
         }
         //Стринг бюлдер ту стринг
         String user = tempUser.toString();
@@ -31,8 +31,8 @@ public class UserCreatorMain {
         System.out.println(user);
         System.out.println(pswrd);
         Date date2 = new Date();
-        long i = date2.getTime() - date1.getTime();
-        System.out.println(i);
+        System.out.println(date2.getTime() - date1.getTime());
+
 
 
 
