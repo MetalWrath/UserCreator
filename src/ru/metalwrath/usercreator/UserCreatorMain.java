@@ -31,8 +31,8 @@ public class UserCreatorMain {
         System.out.println(user);
         System.out.println(pswrd);
         Date date2 = new Date();
-        long i = date2.getTime() - date1.getTime();
-        System.out.println(i);
+        System.out.println(date2.getTime() - date1.getTime());
+
 
 
 
