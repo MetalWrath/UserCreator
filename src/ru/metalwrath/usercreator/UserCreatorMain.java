@@ -1,13 +1,13 @@
 package ru.metalwrath.usercreator;
 
 import java.util.Date;
-// Вариант Андрея через стринг.
+// Мой вариант через SB.
 public class UserCreatorMain {
     public static void main(String[] args) {
         Date date1 = new Date();
         int needLength = 30000;   // Размер для полей юзер и пассворд.
-        String user = "";  //Создали объекты Стринг бюлдера, они не плодят объекты.
-        String pswrd = ""; //Они изменяют созданный объект.
+        StringBuilder tempUser = new StringBuilder();  //Создали объекты Стринг бюлдера, они не плодят объекты.
+        StringBuilder tempPswrd = new StringBuilder(); //Они изменяют созданный объект.
 
         //Создаем алфавит содержащий все нужные нам символы. При необходимости добавь еще какие-нибудь.
         String[] alphabet = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H",
@@ -17,14 +17,15 @@ public class UserCreatorMain {
         //Цикл заполнения для юзера
         for (int i = 0; i < needLength; i++){
             int random = (int)(Math.random() * (alphabet.length - 1) + 1);
-            user = user + (alphabet[random]);
+            tempUser.append(alphabet[random]);
         }
         //Цикл заполнения для пассворда
         for (int i = 0; i < needLength; i++){
             int random = (int)(Math.random() * (alphabet.length - 1) + 1);
-            pswrd = pswrd + (alphabet[random]);
+            tempPswrd.append(alphabet[random]);
         }
-
+        String user = tempUser.toString();
+        String pswrd = tempPswrd.toString();
 
         //Саутим результат.
         System.out.println(user);
