@@ -1,13 +1,13 @@
 package ru.metalwrath.usercreator;
 
 import java.util.Date;
-
+// Вариант Андрея через стринг.
 public class UserCreatorMain {
     public static void main(String[] args) {
         Date date1 = new Date();
         int needLength = 30000;   // Размер для полей юзер и пассворд.
-        String tempUser = "";  //Создали объекты Стринг бюлдера, они не плодят объекты.
-        String tempPswrd = ""; //Они изменяют созданный объект.
+        String user = "";  //Создали объекты Стринг бюлдера, они не плодят объекты.
+        String pswrd = ""; //Они изменяют созданный объект.
 
         //Создаем алфавит содержащий все нужные нам символы. При необходимости добавь еще какие-нибудь.
         String[] alphabet = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H",
@@ -17,16 +17,15 @@ public class UserCreatorMain {
         //Цикл заполнения для юзера
         for (int i = 0; i < needLength; i++){
             int random = (int)(Math.random() * (alphabet.length - 1) + 1);
-            tempUser = tempUser + (alphabet[random]);
+            user = user + (alphabet[random]);
         }
         //Цикл заполнения для пассворда
         for (int i = 0; i < needLength; i++){
             int random = (int)(Math.random() * (alphabet.length - 1) + 1);
-            tempPswrd = tempPswrd + (alphabet[random]);
+            pswrd = pswrd + (alphabet[random]);
         }
-        //Стринг бюлдер ту стринг
-        String user = tempUser.toString();
-        String pswrd = tempPswrd.toString();
+
+
         //Саутим результат.
         System.out.println(user);
         System.out.println(pswrd);
