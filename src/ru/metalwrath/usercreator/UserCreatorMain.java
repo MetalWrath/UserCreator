@@ -1,8 +1,11 @@
 package ru.metalwrath.usercreator;
 
+import java.util.Date;
+
 public class UserCreatorMain {
     public static void main(String[] args) {
-        int needLength = 8;   // Размер для полей юзер и пассворд.
+        Date date1 = new Date();
+        int needLength = 30000;   // Размер для полей юзер и пассворд.
         StringBuilder tempUser = new StringBuilder();  //Создали объекты Стринг бюлдера, они не плодят объекты.
         StringBuilder tempPswrd = new StringBuilder(); //Они изменяют созданный объект.
 
@@ -27,8 +30,9 @@ public class UserCreatorMain {
         //Саутим результат.
         System.out.println(user);
         System.out.println(pswrd);
-
-
+        Date date2 = new Date();
+        long i = date2.getTime() - date1.getTime();
+        System.out.println(i);
 
 
 
